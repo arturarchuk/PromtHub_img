@@ -1,59 +1,103 @@
-# Шаблон: storyboard / серия / кампания
+# Шаблон — Storyboard / Серия / Кампания
 
-Используй для серии изображений, storyboard, набора постов, кампании, нескольких кадров одного персонажа или товара.
+**Когда использовать:** серия изображений с единым персонажем, продуктом или стилем — для кампаний, контента, storyboard'ов. Уровень 4.
 
-## Что нужно зафиксировать
+**Дополнительно:** `Scene-Consistency-и-Reference-Roles.md`, `Reference-Priority-Protocol.md`
 
-Постоянные якоря:
-- персонаж / товар
-- identity
-- outfit
-- стиль
-- палитра
-- локация или логика мира
-- camera language
+---
 
-Что может меняться:
-- действие
-- ракурс
-- эмоция
-- кадрирование
-- фон, если задано
-- время суток, если нужно
+## Зафиксируй якоря перед стартом
 
-## Формат серии
+Перед написанием промптов для серии определи и зафиксируй **неизменяемые элементы**:
 
-Для каждого кадра укажи:
+- Персонаж / продукт — identity, форма
+- Outfit (если нужна консистентность)
+- Стиль и цветовая палитра
+- Свет-логика (откуда свет в этом мире)
+- Соотношение сторон
 
-Frame 1:
-- action
-- composition
-- key detail
+**Изменяемые между кадрами:** действие, ракурс, эмоция, детали фона, время суток
 
-Frame 2:
-- action
-- composition
-- key detail
+---
 
-Frame 3:
-- action
-- composition
-- key detail
+## Формат промпта для серии
 
-## Ограничения
+**Русский:**
+```
+Серия из [N] кадров с одним [персонажем/продуктом/стилем] во всех сценах.
 
-- same character identity in every frame
-- same product shape in every frame
-- consistent color palette
-- consistent lighting logic
-- no random outfit changes
-- no identity drift
-- no product redesign
+Якоря (не меняются):
+— Персонаж/продукт: [описание]
+— Outfit: [описание] / Продукт: [форма, цвет, логотип]
+— Стиль: [описание]
+— Палитра: [цвета]
 
-## Рабочий формат
+Кадр 1: [действие] — [ракурс] — [отличительная деталь]
+Кадр 2: [действие] — [ракурс] — [отличительная деталь]
+Кадр N: ...
 
-Русский prompt:
-Серия из [количество] кадров: постоянные якоря [персонаж/товар/стиль], кадр 1 [действие], кадр 2 [действие], кадр 3 [действие], [ограничения consistency].
+Правила консистентности: не менять лицо, не менять продукт, не менять цветовую схему,
+без гардеробных несоответствий, без дрейфа личности, без редизайна продукта.
+```
 
-English prompt:
-Create a [number]-frame series with the same [character/product/style] across all frames. Character/product lock: [anchors]. Frame 1: [action/composition]. Frame 2: [action/composition]. Frame 3: [action/composition]. Constraints: consistent identity, style, palette, lighting, no drift.
+**English:**
+```
+Create a [N]-frame series with the same [character/product/style] across all frames.
+
+Locked anchors:
+— Character/product: [description]
+— Outfit: [description] / Product: [shape, color, logo]
+— Style: [description]
+— Color palette: [colors]
+
+Frame 1: [action] — [angle] — [distinctive detail]
+Frame 2: [action] — [angle] — [distinctive detail]
+Frame N: ...
+
+Consistency rules: do not change face, do not redesign product, preserve color scheme,
+no wardrobe inconsistencies, no identity drift, no product redesign.
+```
+
+---
+
+## Правила консистентности
+
+```
+maintain character identity across all frames,
+preserve product shape and logo placement unchanged,
+consistent light logic (same light direction world),
+no identity drift between frames,
+no wardrobe changes unless specified
+```
+
+---
+
+## Пример (рейтинг 8/10)
+
+**Задача:** серия из 3 кадров для бренда косметики — один продукт, разные сцены использования
+
+**Русский prompt:**
+Серия из 3 кадров для beauty-бренда с одним продуктом — белый тюбик крема с золотым логотипом "AURA" — во всех сценах.
+
+Якоря: тюбик строго без изменений (форма, цвет, логотип, пропорции), стиль — премиальный минимализм, палитра — белый / золотой / бежевый.
+
+Кадр 1: тюбик на мраморной поверхности, утренний мягкий свет — ракурс 45°, без пропсов.
+Кадр 2: женская рука держит тюбик, выдавливает крем — крупный план руки, боковой студийный свет.
+Кадр 3: тюбик на фоне зелени у окна — естественный дневной свет, атмосфера природы.
+
+Во всех кадрах: продукт читается чётко, логотип виден, без случайного текста, без деформации упаковки.
+
+**English prompt:**
+```text
+3-frame series for a beauty brand featuring one product — white cream tube with gold "AURA" logo — across all frames.
+
+Locked anchors: tube strictly unchanged (shape, color, logo, proportions), style — premium minimalism, palette — white / gold / beige.
+
+Frame 1: tube on marble surface, soft morning light — 45-degree angle, no props.
+Frame 2: female hand holding tube, applying cream — close-up of hand, side studio light.
+Frame 3: tube against green foliage near window — natural daylight, nature atmosphere.
+
+All frames: product clearly legible, logo visible, no random text, no packaging distortion.
+```
+
+**Ключевой принцип:** Явный список "якорей" в начале промпта + "без дрейфа продукта" предотвращают самопроизвольный редизайн между кадрами.
