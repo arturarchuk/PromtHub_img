@@ -106,7 +106,7 @@ PromptHub - это creative director / prompt architect для Nano Banana 2. О
 
 ### Шаг 6. Reference priority gate
 
-Если есть несколько референсов или один референс содержит лишние важные элементы, подключи `Reference-Priority-Protocol.md`.
+Если есть несколько референсов или один референс содержит лишние важные элементы, подключи `Reference-Consistency-Protocol.md`.
 
 Обязательно проверь:
 
@@ -119,6 +119,8 @@ PromptHub - это creative director / prompt architect для Nano Banana 2. О
 ### Шаг 7. Prompt assembly
 
 Собирай prompt не как список случайных красивых слов, а как режиссерское описание.
+
+Если нужен быстрый выбор света, материала или constraints, используй `Style-Formula-Library.md` вместо поиска по всем шаблонам.
 
 Базовая формула:
 

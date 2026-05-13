@@ -6,6 +6,30 @@
 
 ---
 
+## [2026-05-14] Убраны дубли и добавлены быстрые справочники
+
+**Изменено:**
+- `API-Guide.md` — стал единым гайдом для web-Gemini checklist, prompt frameworks, моделей, API-запуска и ошибок.
+- `Протокол-улучшения-v2-v3.md` — преобразован в таблицу `Проблема → Причина → fix-фрагмент`.
+- `Quality-Score-Rubric.md` — добавлен заполняемый бланк оценки и автоматический выбор следующего шага.
+- `Тестовые-сценарии.md` — переведён в таблицу с колонкой "ожидаемый формат ответа".
+- `Prompt-Corpus-Index.md`, `INDEX.md`, `AGENTS.md`, `README.md` — обновлены маршруты после удаления дублей.
+
+**Добавлено:**
+- `QUICK-REF.md` — одностраничник для человека и агента.
+- `Style-Formula-Library.md` — библиотека света, negative constraints и связок стиль/свет/материал.
+- `Reference-Consistency-Protocol.md` — единый протокол ролей референсов, приоритетов, серий и locks.
+- `corpus/` — разбитый корпус по категориям: portrait, product, scene, poster, food.
+
+**Удалено:**
+- `Nano-Banana-API-Workflow.md`, `Google-Cloud-Nano-Banana-Guide.md`, `API-Test-Quickstart.md`, `Web-Gemini-Checklist.md` — объединены в `API-Guide.md`.
+- `Scene-Consistency-и-Reference-Roles.md`, `Reference-Priority-Protocol.md` — объединены в `Reference-Consistency-Protocol.md`.
+- `Nano Banana Pro Prompts - www.promptgather.io - nano-banana-pro.md` — заменён разбивкой в `corpus/`.
+
+**Почему:** уменьшить дублирование, ускорить поиск нужных формул и сделать систему удобнее для командной работы в `main`.
+
+---
+
 ## [2026-05-14] Глобальная реструктуризация системы
 
 **Изменено:**

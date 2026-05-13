@@ -1,12 +1,60 @@
-# API Guide — Локальный запуск Nano Banana / Gemini
+# API Guide — Gemini / Nano Banana Workflow
 
-Полный гайд от настройки до первой генерации. Использовать только при явном запросе локального запуска — стандартный рабочий процесс идёт через web-Gemini.
+Единый гайд по web-Gemini workflow, локальному Nano Banana / Gemini API, моделям, безопасности и типовым ошибкам.
+
+Стандартный путь проекта: PromptHub пишет prompt, пользователь генерирует в web-Gemini, затем присылает результат и feedback. Локальный API используется только при явном запросе запуска или теста.
 
 > **Безопасность:** API-ключи только в `.env`. Никогда не хранить в коде, чате или репозитории.
 
 ---
 
-## Часть 1 — Когда использовать API (а когда нет)
+## Часть 1 — Основной web-Gemini workflow
+
+### Перед генерацией
+
+| Проверка | Что должно быть готово |
+|----------|------------------------|
+| Режим | Открыт web-Gemini / Create images, выбран доступный режим Fast / Thinking / Pro |
+| Prompt | English prompt скопирован полностью |
+| Формат | Aspect ratio указан в prompt, если важен |
+| Текст | Нужная фраза в кавычках; если текст не нужен — есть `no text / no letters / no watermark` |
+| Референсы | Все изображения загружены до отправки prompt, роли референсов понятны |
+| Портрет | Лицо достаточно крупно, глаза видны, есть `natural skin texture`, если нужен реализм |
+| Товар | Форма, материал и логотип закреплены; есть `no warped product shape / no redesign` |
+| Постер | Есть точный текст, иерархия, место под типографику и запрет лишних букв |
+
+### После генерации
+
+Пользователь присылает:
+
+1. результат изображения;
+2. что нравится;
+3. что не нравится;
+4. что сохранить;
+5. что изменить;
+6. оценку близости 1-10.
+
+Если результат почти хороший, feedback должен быть точечным: сохранить композицию/лицо/свет, исправить только руки, фон, текст или товар.
+
+Если результат совсем не тот, нужно указать, какая цель была на самом деле: `v2`, `local edit` или `clean restart`.
+
+---
+
+## Часть 2 — Prompt frameworks
+
+| Тип задачи | Формула |
+|------------|---------|
+| Text-to-image | `[Subject] + [Action] + [Location/context] + [Composition] + [Style] + [Lighting] + [Materials] + [Aspect ratio] + [Constraints]` |
+| Reference composition | `Use [Image A] as [role]. Transform into [new scenario]. Preserve [critical details]. Ignore [irrelevant parts].` |
+| Image editing | `Edit only [target] into [new result]. Keep [unchanged elements] exactly the same.` |
+| Text rendering | `Render the exact text "[TEXT]" with [font style], [position], [hierarchy]. No extra letters, no misspellings.` |
+| Realtime / web-aware | `Search/use current [topic]. Translate the retrieved information into [visual concept].` |
+
+Практическое правило: пиши как creative director, а не как набор тегов. Управляй субъектом, композицией, светом, материалами и ограничениями.
+
+---
+
+## Часть 3 — Когда использовать API (а когда нет)
 
 **Используй API для:**
 - Локального тестирования промптов
@@ -20,15 +68,15 @@
 
 ---
 
-## Часть 2 — Настройка
+## Часть 4 — Настройка API
 
-### 2.1 Получить API-ключ
+### 4.1 Получить API-ключ
 
 1. Открыть [Google AI Studio](https://aistudio.google.com/)
 2. Создать новый API-ключ
 3. Скопировать ключ — он показывается только один раз
 
-### 2.2 Настроить .env
+### 4.2 Настроить .env
 
 Создать файл `.env` в корне проекта:
 
@@ -42,7 +90,7 @@ GOOGLE_AI_PROJECT_ID=projects/168169110837
 echo ".env" >> .gitignore
 ```
 
-### 2.3 Установить зависимости
+### 4.3 Установить зависимости
 
 ```bash
 pip install -r requirements.txt
@@ -55,7 +103,7 @@ bash scripts/run_nano_banana_test.sh
 
 ---
 
-## Часть 3 — Доступные модели
+## Часть 5 — Доступные модели
 
 | Модель | ID | Применение |
 |--------|----|-----------|
@@ -69,7 +117,7 @@ NANO_BANANA_MODEL=gemini-3-pro-image-preview bash scripts/run_nano_banana_test.s
 
 ---
 
-## Часть 4 — Запуск
+## Часть 6 — Запуск API
 
 ### Быстрый тест
 
@@ -90,7 +138,7 @@ NANO_BANANA_TEST_PROMPT="Portrait of a woman, natural lighting, realistic skin t
 
 ---
 
-## Часть 5 — Стандартный workflow с API
+## Часть 7 — Стандартный workflow с API
 
 ```
 Написать промпт (AGENTS.md пайплайн)
@@ -108,7 +156,7 @@ NANO_BANANA_TEST_PROMPT="Portrait of a woman, natural lighting, realistic skin t
 
 ---
 
-## Часть 6 — Решение проблем
+## Часть 8 — Решение проблем
 
 | Проблема | Причина | Решение |
 |----------|---------|---------|
@@ -121,7 +169,7 @@ NANO_BANANA_TEST_PROMPT="Portrait of a woman, natural lighting, realistic skin t
 
 ---
 
-## Часть 7 — Безопасность
+## Часть 9 — Безопасность
 
 **Критические правила:**
 - Никогда не хранить ключи в коде, markdown-файлах или чате
@@ -140,6 +188,5 @@ NANO_BANANA_TEST_PROMPT="Portrait of a woman, natural lighting, realistic skin t
 ## Связанные файлы
 
 - `Gemini-Web-Workflow.md` — стандартный workflow через браузер
-- `Web-Gemini-Checklist.md` — чеклист перед генерацией в web
 - `requirements.txt` — зависимости Python
 - `scripts/run_nano_banana_test.sh` — скрипт запуска

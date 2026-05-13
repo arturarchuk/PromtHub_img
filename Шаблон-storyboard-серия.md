@@ -2,7 +2,7 @@
 
 **Когда использовать:** серия изображений с единым персонажем, продуктом или стилем — для кампаний, контента, storyboard'ов. Уровень 4.
 
-**Дополнительно:** `Scene-Consistency-и-Reference-Roles.md`, `Reference-Priority-Protocol.md`
+**Дополнительно:** `Reference-Consistency-Protocol.md`
 
 ---
 

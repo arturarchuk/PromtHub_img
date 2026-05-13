@@ -90,10 +90,10 @@
 | Тип | Формат | Пример |
 |-----|--------|--------|
 | Шаблоны | `Шаблон-[категория].md` | `Шаблон-портрет.md` |
-| Протоколы | `[Тема]-Protocol.md` | `Reference-Priority-Protocol.md` |
+| Протоколы | `[Тема]-Protocol.md` | `Reference-Consistency-Protocol.md` |
 | Гайды | `[Тема]-Guide.md` | `API-Guide.md` |
 | Рабочие процессы | `[Инструмент]-Workflow.md` | `Gemini-Web-Workflow.md` |
-| Чеклисты | `[Тема]-Checklist.md` | `Web-Gemini-Checklist.md` |
+| Быстрые справочники | `[TOPIC]-REF.md` | `QUICK-REF.md` |
 
 **Для русскоязычных файлов:** слова через дефис, без пробелов, первое слово с заглавной.
 

@@ -1,6 +1,6 @@
 # INDEX — Дерево решений PromptHub
 
-> Не читай все файлы подряд. Найди свой тип задачи ниже → открой только нужные файлы.
+> Сначала открой `QUICK-REF.md`, если нужен быстрый маршрут. Не читай все файлы подряд. Найди тип задачи ниже → открой только нужные файлы.
 
 ---
 
@@ -40,7 +40,7 @@
 ├── 📦 Товар / продукт / упаковка
 │   ├── Без бренда                    → Шаблон-товар.md  [Level 2]
 │   └── С логотипом / брендом         → Шаблон-товар.md  [Level 4]
-│                                       + Reference-Priority-Protocol.md
+│                                       + Reference-Consistency-Protocol.md
 │
 ├── 🎬 Постер / баннер / thumbnail    → Шаблон-постер.md  [Level 2–3]
 │
@@ -57,9 +57,10 @@
 
 ### A2 — Всегда перед выдачей
 
-1. Проверь `Анти-паттерны-и-ошибки.md`
-2. Сверься с `Чеклист-качества-промпта.md`
-3. Если нужна помощь с уточняющими вопросами → `Уточняющие-вопросы.md`
+1. Возьми рабочие фрагменты из `Style-Formula-Library.md`, если нужен свет/материал/constraint
+2. Проверь `Анти-паттерны-и-ошибки.md`
+3. Сверься с `Чеклист-качества-промпта.md`
+4. Если нужна помощь с уточняющими вопросами → `Уточняющие-вопросы.md`
 
 ---
 
@@ -74,7 +75,7 @@
 └── Убираем / добавляем элемент  → Level 5: Edit only [X]. Keep everything else.
 ```
 
-Дополнительно: `Reference-Priority-Protocol.md` если используется референс
+Дополнительно: `Reference-Consistency-Protocol.md` если используется референс
 
 ---
 
@@ -96,8 +97,7 @@
 
 ```
 Шаблон-storyboard-серия.md  [Level 4]
-+ Scene-Consistency-и-Reference-Roles.md
-+ Reference-Priority-Protocol.md (при нескольких референсах)
++ Reference-Consistency-Protocol.md
 ```
 
 Зафиксируй якоря перед стартом: персонаж / продукт / стиль / палитра / свет-логика
@@ -142,6 +142,7 @@ Production-Prompt-Blueprint.md ← эталон структуры
 
 ### Ядро системы
 - `AGENTS.md` — инструкции агента (единственный источник правил)
+- `QUICK-REF.md` — одностраничный быстрый справочник
 - `INDEX.md` — этот файл, дерево решений
 - `Архитектура-PromptHub.md` — детальный 12-шаговый пайплайн
 
@@ -156,6 +157,7 @@ Production-Prompt-Blueprint.md ← эталон структуры
 ### Качество
 - `Анти-паттерны-и-ошибки.md` · `Чеклист-качества-промпта.md`
 - `Quality-Score-Rubric.md` · `Production-Prompt-Blueprint.md`
+- `Style-Formula-Library.md`
 - `Уровни-промпта.md`
 
 ### Итерации
@@ -164,8 +166,7 @@ Production-Prompt-Blueprint.md ← эталон структуры
 
 ### Консистентность и референсы
 - `Консистентность-лица-Nano-Banana.md`
-- `Scene-Consistency-и-Reference-Roles.md`
-- `Reference-Priority-Protocol.md`
+- `Reference-Consistency-Protocol.md`
 - `Официальные-принципы-Nano-Banana.md`
 
 ### Память
@@ -174,12 +175,12 @@ Production-Prompt-Blueprint.md ← эталон структуры
 
 ### API и генерация
 - `API-Guide.md` — полный гайд от настройки до запуска
-- `Gemini-Web-Workflow.md` · `Web-Gemini-Checklist.md`
+- `Gemini-Web-Workflow.md`
 
 ### Корпус
 - `Prompt-Corpus-Index.md` · `Prompt-Versioning.md`
 - `Тестовые-сценарии.md` · `Форматы-и-соотношения.md`
-- `Nano Banana Pro Prompts - nano-banana-pro.md`
+- `corpus/` — разбитый prompt corpus по категориям
 
 ### Команда
 - `CONTRIBUTING.md` — как вносить вклад

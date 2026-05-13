@@ -20,6 +20,7 @@
 ```
 PromtHub_img/
 ├── AGENTS.md                        # Главные инструкции агента (точка входа)
+├── QUICK-REF.md                      # Одностраничный быстрый справочник
 ├── INDEX.md                         # Карта навигации по всем файлам
 ├── Архитектура-PromptHub.md         # 12-шаговый пайплайн системы
 │
@@ -41,6 +42,7 @@ PromtHub_img/
 │   ├── Чеклист-качества-промпта.md
 │   ├── Quality-Score-Rubric.md
 │   ├── Production-Prompt-Blueprint.md
+│   ├── Style-Formula-Library.md
 │   └── Анти-паттерны-и-ошибки.md
 │
 ├── Итерации и обратная связь/
@@ -56,23 +58,24 @@ PromtHub_img/
 │
 ├── Референсы и консистентность/
 │   ├── Консистентность-лица-Nano-Banana.md
-│   ├── Scene-Consistency-и-Reference-Roles.md
-│   ├── Reference-Priority-Protocol.md
+│   ├── Reference-Consistency-Protocol.md
 │   └── Официальные-принципы-Nano-Banana.md
 │
 ├── API и интеграции/
-│   ├── Nano-Banana-API-Workflow.md
 │   ├── Gemini-Web-Workflow.md
-│   ├── Google-Cloud-Nano-Banana-Guide.md
-│   ├── API-Test-Quickstart.md
-│   └── Web-Gemini-Checklist.md
+│   └── API-Guide.md
 │
 ├── Данные/
 │   ├── Prompt-Corpus-Index.md
 │   ├── Prompt-Versioning.md
 │   ├── Тестовые-сценарии.md
 │   ├── Форматы-и-соотношения.md
-│   └── Nano Banana Pro Prompts - nano-banana-pro.md
+│   └── corpus/
+│       ├── portrait.md / portrait-01.md ...
+│       ├── product.md
+│       ├── scene.md
+│       ├── poster.md
+│       └── food.md
 │
 └── requirements.txt
 ```
@@ -131,11 +134,12 @@ PromtHub_img/
 
 ## Быстрый старт
 
-1. Откройте `AGENTS.md` — главные инструкции для агента
-2. Используйте `INDEX.md` как карту навигации
-3. Опишите задачу свободным языком — система определит тип и подберёт шаблон
-4. Получите промпт и вставьте в web-Gemini (Nano Banana 2)
-5. Дайте обратную связь — система запишет результат и предложит v2
+1. Откройте `QUICK-REF.md` — быстрый маршрут для человека и агента
+2. Откройте `AGENTS.md` — главные инструкции для агента
+3. Используйте `INDEX.md` как карту навигации
+4. Опишите задачу свободным языком — система определит тип и подберёт шаблон
+5. Получите промпт и вставьте в web-Gemini (Nano Banana 2)
+6. Дайте обратную связь — система запишет результат и предложит v2
 
 ---
 
@@ -143,7 +147,7 @@ PromtHub_img/
 
 Локальный запуск через Nano Banana API доступен только при явном запросе. Настройка через `.env` файл (ключи никогда не хранятся в коде).
 
-Подробнее: [`Nano-Banana-API-Workflow.md`](Nano-Banana-API-Workflow.md) и [`API-Test-Quickstart.md`](API-Test-Quickstart.md)
+Подробнее: [`API-Guide.md`](API-Guide.md)
 
 ---
 

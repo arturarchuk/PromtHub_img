@@ -1,8 +1,8 @@
 # Prompt Corpus Index
 
-Этот файл - быстрый индекс к большому корпусу `Nano Banana Pro Prompts - www.promptgather.io - nano-banana-pro.md`.
+Этот файл - быстрый индекс к разбитому корпусу в папке `corpus/`.
 
-Не читай весь corpus для обычного prompt. Используй этот индекс как карту паттернов.
+Не читай весь corpus для обычного prompt. Используй этот индекс как карту паттернов, а конкретные файлы открывай только при необходимости.
 
 ## Что есть в corpus
 
@@ -20,6 +20,16 @@
 - product/fashion/cinematic композиции
 - text rendering
 - JSON-style группировки
+
+## Файлы корпуса
+
+| Категория | Файл |
+|-----------|------|
+| Portrait / fashion / identity | `corpus/portrait.md` → части `corpus/portrait-01.md` ... `corpus/portrait-04.md` |
+| Product / commercial | `corpus/product.md` |
+| Cinematic / scene / environment | `corpus/scene.md` |
+| Poster / text / infographic | `corpus/poster.md` |
+| Food / beverage | `corpus/food.md` |
 
 ## Основные категории
 
@@ -126,8 +136,7 @@
 
 Используй вместе с:
 
-- `Reference-Priority-Protocol.md`
-- `Scene-Consistency-и-Reference-Roles.md`
+- `Reference-Consistency-Protocol.md`
 
 ### Infographic / diagram
 
@@ -141,7 +150,7 @@
 
 Используй вместе с:
 
-- `Google-Cloud-Nano-Banana-Guide.md`
+- `API-Guide.md`
 - `Production-Prompt-Blueprint.md`
 
 ## Useful structural patterns
